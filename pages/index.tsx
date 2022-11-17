@@ -14,6 +14,7 @@ export default function Profile() {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    console.log('index');
     getData();
   }, []);
 
@@ -42,6 +43,9 @@ export default function Profile() {
           setData(data[0]);
           setTotal(data.length);
           setLoading(false);
+        })
+        .catch(e => {
+          console.log(e);
         });
   }
 
