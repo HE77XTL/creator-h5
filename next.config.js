@@ -9,4 +9,17 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = {
+  ...nextConfig,
+  webpack: (config,
+            { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname),
+      '@/src': path.resolve(__dirname, 'src'),
+    };
+    return config
+  },
+};
+
+
