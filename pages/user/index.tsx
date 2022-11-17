@@ -1,5 +1,9 @@
-export default function userPage(){
+import Tabbar from '../../components/tabbar/tabbar';
+import styles from '../../styles/variables.module.scss';
+
+export default function userPage() {
   return <div>
-    user index page
-  </div>
+    <div style={{color: styles.primaryColor}}>user index page</div>
+    <Tabbar/>
+  </div>;
 }
