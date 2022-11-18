@@ -1,8 +1,6 @@
 import {AppProps} from 'next/app';
+import 'antd/dist/antd.css'
 import Head from 'next/head';
-// @ts-ignore
-import { Inter } from '@next/font/google'
-const inter = Inter()
 
 // @ts-ignore
 export default function App({Component, pageProps}: AppProps) {
@@ -10,9 +8,7 @@ export default function App({Component, pageProps}: AppProps) {
     <Head>
       <title>creator</title>
     </Head>
-    <main className={inter.className}>
-      <Component {...pageProps} />
-    </main>
+    <Component {...pageProps} />
   </>;
 
 }

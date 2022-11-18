@@ -4,6 +4,17 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    unoptimized: true
+  },
+  exportPathMap: async function (
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      '/ssgPage': { page: '/ssgPage' },
+    }
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles'), path.join(__dirname, 'components'), path.join(__dirname, 'pages')],
   },
